@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Items</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items" [routerLink]="['/item-detail', item.id]">
+      {{ item.name }}
+      <ion-button fill="clear" color="danger" (click)="deleteItem(item.id, $event)">Delete</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
